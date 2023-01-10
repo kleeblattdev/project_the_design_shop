@@ -1,0 +1,240 @@
+/* color-scheme
+#323A45 / #848484 */
+
+/* font-family
+font-family: 'Karla', sans-serif; */
+
+@font-face {
+    font-family: 'Karla';
+    src: url(../fonts/Karla/Karla-VariableFont_wght.ttf);
+}
+
+/* GLOBAL STYLE */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, p, a{
+    color: #323A45;
+} 
+
+.company, .copyright{
+    color: #848484;
+}
+
+header, main, footer{
+    margin: 3vh 5vw;
+}
+
+img{
+    width: 100%;
+}
+
+/* HEADER / NAV STYLE */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+li{
+    list-style: none;
+}
+
+.navItem a{
+    color: #848484;
+}
+
+.navMenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    background-color: #323A45;
+    position: fixed;
+    left:-100%;
+    top: 70px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.hamburger{
+    display: block;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #323A45;
+}
+
+/* hamburgerbars transition to x on activation */
+.hamburger.active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.navItem{
+    margin: 16px 0;
+}
+
+.navMenu.active{
+    left: 0;
+}
+
+/* MAIN STYLE */
+
+main section article{
+    margin-bottom: 5vh;
+}
+
+main section article a img{
+    margin-bottom: 2vh;
+}
+
+main section article a:hover{
+    opacity: 0.2;
+    transition-duration: 2s;
+}
+
+section article div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.productName, .price, .company{
+    font-size: 1rem;
+}
+
+.productName{
+    font-weight: 900;
+}
+
+
+/* FOOTER STYLE */
+
+footer section{
+    margin-bottom: 5vh;
+}
+
+footer section p{
+    word-spacing: 0.2em;
+    line-height: 1.5em;
+}
+
+footer section a:not(.subscribe){
+    display: block;
+    padding: 5px 5px 5px 0;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+h3{
+    margin-bottom: 5vh;
+    font-weight: 700;
+}
+
+.designerName{
+    font-weight: 900;
+}
+
+.contactLinks a{
+    font-weight: 800;
+}
+
+.newsletter
+
+.spam{
+    font-style: italic;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    transition-duration: 1s;
+}
+
+/* MEDIA QUERIES FOR min-width: 768px */
+
+@media only screen and (min-width: 768px) {
+
+/* Header MIN-WIDTH:768px */
+
+.hamburger{
+    display: none;
+}
+
+.navMenu{
+    position:relative;
+    background-color: white;
+    flex-direction: row;
+    left:auto;
+    top: initial;
+    gap: 60px;
+}
+
+.navItem a{
+    color: #323A45;
+}
+
+
+h1:hover, .navItem a:hover{
+    color:#848484;
+    transition-duration: 0.7s ease;
+}
+
+/* Main MIN-WIDTH:768px */
+
+main section{
+    display: grid;
+    gap:20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3,auto);
+}
+
+.productHeader{
+    grid-column: 1/4;
+}
+
+/* Footer MIN-WIDTH:768px */
+
+footer{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+
+
+
+}
